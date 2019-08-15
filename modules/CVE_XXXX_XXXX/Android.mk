@@ -1,0 +1,8 @@
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := CVE_XXXX_XXXX
+LOCAL_SRC_FILES := CVE_XXXX_XXXX.c
+
+
+include $(BUILD_EXECUTABLE)
