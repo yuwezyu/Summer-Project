@@ -1,0 +1,14 @@
+一、熟悉整体流程
+	1.编写java文件，输出字符串hello world。
+	2.编写c文件，输出字符串hello landi。
+	3.利用run.sh进行编译，将编译出的dex文件和bin文件push进终端，
+	  利用app_process命令执行dex，bin由dex中调用，输出以上两句字符串则表示成功，
+	  demo已在modules文件夹下给出。
+二、掌握检测原理
+	1.每个人名字对应的文件夹里有一个CVE编号，VTS中包含该CVE检测原理的代码，
+	  理解代码(结合安卓源码与补丁源码分析，源码请自行google获取，源码阅读软件推荐source insight)，
+	  并将代码移植至上述的流程中，请务必按照demo中的要求规范编写。
+	2.编写完成并调试运行成功后，可以开始展开其他CVE漏洞检测程序的研究编写。
+	  https://www.cvedetails.com/vulnerability-list/vendor_id-1224/product_id-19997/version_id-186573/
+	  从上述网址中获取CVE编号(各组员之间应尽量避免重复)，google查找补丁代码，编写检测程序进行检测漏洞是否存在。
+	3.将编写完成的检测模块源代码上传至github中自己名字对应的文件夹中。

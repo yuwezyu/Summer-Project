@@ -37,21 +37,15 @@ _exit
 rm *.java
 printf "%s Compiling done...\n" ${dir}
 
-#Step3 make jar
-printf "\n[*]Step3 make %s.class into jar\n" ${dir}
-jar -cvfe ${dir}.jar ${dir} *.class
+#step3 make dex
+printf "\n[*]Step3 make %s.jar into dex\n" ${dir}
+dx --dex --output=${dir}.dex ${dir}.class
 _exit
 rm *.class
-printf "%s.jar done...\n" ${dir}
-
-#step4 make dex
-printf "\n[*]Step4 make %s.jar into dex\n" ${dir}
-dx --dex --output=${dir}.dex ${dir}.jar
-_exit
-rm *.jar
 mv *.dex ${root}/libs/armeabi-v7a/
 _exit
 printf "\n[*]%s.dex done...\n" ${dir}
 cd ${root}/modules
+mv ${dir} ${root}/source
 done
 

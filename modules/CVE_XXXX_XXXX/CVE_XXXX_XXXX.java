@@ -1,24 +1,16 @@
-import android.content.Context;
-import android.os.Build;
-import java.io.File;
-import android.util.Log;
-
 public class CVE_XXXX_XXXX{
 	private static int errno;
-	
+	//exec方法等效于cmd中直接执行命令行
 	private static int exec(String cmd) throws Exception{
         	Process p = Runtime.getRuntime().exec(cmd);
         	return p.waitFor();
     	}
 
 	private static  Bug_id1(String path) throws Exception{
-		//first check version
-		int version = Build.VERSION.SDK_INT;
-		//if(version){
-		//	return 
-		}
 		//do detect
+		//赋予bin文件执行权限
 		exec("chmod 777 " + path + File.separator + "CVE_XXXX_XXXX");
+		//执行bin获取返回值判断
 		int ret = exec("." + path + File.separator + "CVE_XXXX_XXXX";
 		switch(ret){
 			case 255://漏洞不存在
@@ -37,14 +29,14 @@ public class CVE_XXXX_XXXX{
 	//Bug_idn(){}
 
 
-	private static int isVulnerable(String path) throws Exception{
+	private static int isVulnerable() throws Exception{
 		//if bug return true
-        	boolean Bug_id1 = Bug_id1(path);
-        	boolean Bug_id2 = Bug_id2(path);
+        	boolean Bug_id1 = Bug_id1();
+        	boolean Bug_id2 = Bug_id2();
 			.
 			.				
 			.
-        	boolean Bug_idn = Bug_idn(path);
+        	boolean Bug_idn = Bug_idn();
         	if(Bug_id1 || Bug_id2 || ... || Bug_idn){
             		System.out.println("CVE_XXXX_XXXX is Vulnerablitity true.\n");
             		return 254;
@@ -55,15 +47,12 @@ public class CVE_XXXX_XXXX{
         	}
     	}	
 
-	public static int main(Context context){
-		//path to exec bin
-		String path = context.getFilesDir().getAbsolutePath() + File.separator + "cve" + File.separator + "CVE_XXXX_XXXX";
-		Log.i("aden","path:" + path);
+	public static int main(String args[]){
 		try{
-            return isVulnerable(path); 
+            		return isVulnerable(); 
 		}catch(Exception e){
-            e.printStackTrace();
-        }
-        return errno;
+            		e.printStackTrace();
+        	}
+        	return errno;
 	}
 }
