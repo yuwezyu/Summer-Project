@@ -1,8 +1,8 @@
 一、熟悉整体流程
-	1.编写java文件，输出字符串hello world。
-	2.编写c文件，输出字符串hello landi。
-	3.利用run.sh进行编译，将编译出的dex文件和bin文件push进终端，
-	  利用app_process命令执行dex，bin由dex中调用，输出以上两句字符串则表示成功，
+	1.编写C文件，返回值为1。
+	1.编写java文件，利用exec方法调用bin，若返回值为1输出字符串hello world。
+	2.利用run.sh进行编译，将编译出的dex文件和bin文件push进终端，
+	  利用app_process命令执行dex，bin由dex中调用，输出以上字符串则表示成功，
 	  demo已在modules文件夹下给出。
 二、掌握检测原理
 	1.每个人名字对应的文件夹里有一个CVE编号，VTS中包含该CVE检测原理的代码，
